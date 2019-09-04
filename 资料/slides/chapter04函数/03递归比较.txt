@@ -1,0 +1,30 @@
+
+import datetime
+
+def fib1(n=35):
+    a = 0
+    b = 1
+    n = 4
+    # —≠ª∑ µœ÷
+    for i in range(n - 1):
+        a, b = b, a + b
+    return b # 9227465
+
+def fib2(n=35):
+    return 1 if n<3 else fib2(n-1) + fib2(n-2)
+
+def fib3(n=35, a=0, b=1):
+    a, b = b, a+b
+    if n == 0:
+        return a
+    return fib3(n-1, a, b)
+
+
+fns = [fib1, fib2, fib3]
+
+for fn in fns:
+    start = datetime.datetime.now()
+    for i in range(2):
+        fn()
+    delta = (datetime.datetime.now() - start).total_seconds()
+    print(fn, delta)

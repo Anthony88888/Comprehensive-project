@@ -1,0 +1,65 @@
+\\172.16.0.1\python18
+username:python18
+password:Python18
+
+
+ftp://172.16.0.1/pub/ISOs/CentOS/CentOS-7-x86_64-Everything-1810.iso
+
+c:\windows\
+c:\program files\
+
+/dev/sda1,a5 sdb
+
+MBR GPT
+
+主分区：最多4个    1-4
+扩展分区：最多1个  1-4 主加扩展分区最多4个
+逻辑分区：5...
+
+
+
+逻辑分区 mount  c:\disk
+
+918975cdf947e858c9a0c77d6b90a9a56d9977f3a4496a56437f46f46200cf71  CentOS-7-x86_64-Everything-1810.iso
+
+administrator
+
+root 
+
+uid userid 0 
+/ 
+
+r=4
+w=2
+x=1
+
+rw-r----- all.txt 
+110 100 000
+6    4  0
+chmod 640 all.txt
+
+
+cp 
+mv
+rm
+mkdir
+touch 
+>
+2>
+&> 
+|
+useradd
+userdel
+groupadd
+groupdel
+
+id
+
+chmod 
+chown 
+setfacl 
+umask 
+
+
+ifconfig |sed -n -e '2s/.*inet //' -e '2s/ netmask.*//p'
+ifconfig |sed  -nr '2s/[^0-9]+([0-9.]+) .*/\1/p'   
