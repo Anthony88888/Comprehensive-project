@@ -1,0 +1,88 @@
+#部署Gogs相关步骤总结,后续会逐步完善，需要结合Jenkins实现CI/CD
+#参考博客地址:https://blog.51cto.com/13043516/2124597    
+             https://www.jianshu.com/p/7fc6eafd31e7?from=timeline&isappinstalled=0
+
+
+No.1
+#最小化环境继续安装wget命令，最好把常用命令都安装一下
+#下载Gogs的二进制包，并且解压。
+yum -y install wget 
+wget https://dl.gogs.io/0.11.43/gogs_0.11.43_linux_amd64.tar.gz
+tar -zxvf gogs_0.11.43_linux_amd64.tar.gz
+
+#把解压的Gogs目录放到固定目录下，并且进入到当前目录下
+cp -rf gogs /usr/local/gogs
+cd /usr/local/gogs/
+
+#创建Gogs的用户和组等相关操作步骤
+#passwd 设置密码
+groupadd gogs
+useradd -g gogs -s /sbin/nologin gogs
+passwd gogs             
+
+
+#创建Gogs相关目录，并设置执行权限
+mkdir -p /data/gogs/repositories
+mkdir -p /data/gogs/logs
+chown -R gogs:gogs /data/gogs/
+chown -R gogs:gogs /usr/local/gogs/
+
+#设置Gogs的启动脚本，我会放到Github的仓库上面
+vim /usr/lib/systemd/system/gogs.service
+
+[Unit]  
+Description=Gogs  
+After=network.target  
+
+[Service]  
+
+Type=simple  
+User=gogs  
+Group=gogs  
+WorkingDirectory=/usr/local/gogs  
+ExecStart=/usr/local/gogs/gogs web
+Restart=always  
+
+[Install]  
+WantedBy=multi-user.target 
+
+#启动Gogs，并且查看状态
+systemctl enable gogs --now 
+systemctl status gogs
+
+#No.2
+
+#安装go语言依赖和git服务 
+yum install -y epel*
+yum -y install go git
+
+#安装数据库等先关步骤,此处后续生产一定要改成官方的mysql的安装包
+wget -i -c http://dev.mysql.com/get/mysql57-community-release-el7-10.noarch.rpm
+yum -y install mysql57-community-release-el7-10.noarch.rpm
+yum -y install mysql-community-server
+systemctl enable mysqld --now
+systemctl status mysqld
+
+#查看数据库密码，以及安全加固初始化数据库等操作
+grep "password" /var/log/mysqld.log
+mysql_secure_installation
+
+#通过之前拿到的密码登录数据库操作
+#修改密码参考mysql-5.7的主从搭建当时的笔记操作即可
+mysql -uroot -p
+
+#剩下web界面安装步骤参照王非雨的博客进行,访问gogs的web安装界面并安装gogs
+https://blog.51cto.com/13043516/2124597
+
+
+#剩下补充后续一些拉取Gogs上代码的一些命令，需要根据自己的情况，有针对性的采用
+git clone http://www.tgogst.com:3000/Jenkins/test.git
+touch README.md
+git init
+git add README.md
+git commit -m "first commit"
+git config user.name Jenkins
+git config user.email rosecar256@gmail.com
+git commit -m "first commit"
+git remote add origin http://www.tgogst.com:3000/Jenkins/test.git
+git push -u origin master
