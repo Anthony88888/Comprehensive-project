@@ -1,0 +1,70 @@
+
+#GitHub上部署文档的地址:https://github.com/Anthony88888/Comprehensive-project
+
+#1.
+#步骤总结,后期可以完善脚本的方式部署,我此处是基于google云进行部署的
+#公有云部署的话首先要放开端口80，443端口、8181可以根据测试需求放开。
+sed -i 's/SELINUX=enforcing/SELINUX=disabled/'  /etc/selinux/config  && reboot
+
+
+#2.
+#下载mindoc的zip包等相关操作
+mkdir /data/mindoc/ -pv
+cd /data/mindoc/
+yum -y install wget  unzip zip
+wget https://github.com/lifei6671/mindoc/releases/download/v1.0.2/mindoc_linux_amd64.zip
+unzip mindoc_linux_amd64.zip
+#cp conf/app.conf.example conf/app.conf     #此步骤可以不执行,直接拷贝配置脚本到conf目录下。
+cd conf/                                    #放入app.conf的配置文件即可
+
+
+#3.
+#部署数据库相关操作
+#命令3是，使用mysql连接到数据库,剩下命令都是在数据库当中执行。
+yum -y install mariadb-server
+systemctl enable mariadb --now
+mysql
+CREATE DATABASE mindoc_db  DEFAULT CHARSET utf8mb4 COLLATE utf8mb4_general_ci;
+UPDATE mysql.user SET password = PASSWORD( '123456' ) WHERE USER = 'root';
+FLUSH PRIVILEGES;
+
+
+#4.
+#可以先启动之后,通过IP+8181端口的方式访问，最好先执行第5步，用Nginx实现反向代理，通过80端口进行访问
+cd ..
+chmod +x mindoc_linux_amd64
+./mindoc_linux_amd64 service install
+#systemctl start mindocd.service          
+#systemctl enable mindocd.service
+
+
+#5.
+#安装好之后把此仓库的配置文件nginx.conf,用xftp或者rz的方式传到/etc/nginx/nginx.conf 目录下
+#继续上传mindoc.conf到/etc/nginx/conf.d/目录下,需要修改server_name域名和access_logs的日志定义
+#proxy_pass 反代用的是google云的内网的地址.还需要创建单独的日志存放路径才可
+yum -y install nginx
+mkdir /data/mindoc/logs/
+nginx -t
+systemctl enable nginx --now
+
+#6.
+#此时再打开第三步的systemctl start mindocd.service 以及systemctl enable mindocd.service
+#启动完之后，要查看80和8181端口是否都有监听。
+#访问web浏览器自己配置的域名,即可正常登陆，默认账号:admin、密码:123456,如果不对的话,通过下面第4条命令修改密码
+systemctl start mindocd.service
+systemctl enable mindocd.service
+ss -ntl
+./mindoc_linux_amd64 password -account admin -password 123456
+
+
+
+
+
+
+
+
+
+
+
+
+
