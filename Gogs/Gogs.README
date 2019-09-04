@@ -86,3 +86,14 @@ git config user.email rosecar256@gmail.com
 git commit -m "first commit"
 git remote add origin http://www.tgogst.com:3000/Jenkins/test.git
 git push -u origin master
+
+
+#No.3
+#更新Web钩子，后期会详细整理Jenkins+Gogs的笔记，图文并茂
+#推送地址的格式，参考博客: https://www.jianshu.com/p/7fc6eafd31e7?from=timeline&isappinstalled=0
+http://www.jenkinst.com:8080/gogs-webhook/?job=test
+#数据格式,默认的
+application/json
+
+
+
