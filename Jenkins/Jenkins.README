@@ -1,0 +1,5 @@
+#Jenkins结合Gogs测试环境中的一些资料整理
+
+No.1
+#参考博客http://dockone.io/article/9232  
+#参考相关内容,在Jenkins上下载插件JobConfigHistory，查看流水线历史执行内容

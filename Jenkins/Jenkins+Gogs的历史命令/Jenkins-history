@@ -1,0 +1,349 @@
+    1  cd /etc/sysconfig/network-scripts/
+    2  ls
+    3  vim ifcfg-ens33 
+    4  vi ifcfg-ens33 
+    5  ip a 
+    6  vi ifcfg-ens33 
+    7  systemctl restart network
+    8  systemctl network restart
+    9  systemctl start network
+   10  ip a 
+   11  reboot
+   12  ping www.baidu.com
+   13  cd /etc/yum.repos.d/
+   14  ls
+   15  mkdir Backup
+   16  mv C* Backup/
+   17  ls
+   18  ping 172.20.42.66
+   19  ls
+   20  vim base.repo 
+   21  vi base.repo 
+   22  yum repolist
+   23  mount /dev/sr0 /mnt
+   24  echo "- - -" > /sys/class/scsi_host/host0/scan
+   25  lsblk
+   26  mount /dev/sr0 /mnt
+   27  df
+   28  yum repolist
+   29  yum -y install  vim
+   30  du -sh /
+   31  cd /etc/ssh/sshd_config 
+   32  vim /etc/ssh/sshd_config 
+   33  systemctl restart ssdh
+   34  systemctl restart sshd
+   35  exit
+   36  vim /etc/profile.d/
+   37  vim .bashrc 
+   38  . .bashrc 
+   39  vim .bashrc 
+   40  . .bashrc 
+   41  ip[ a 
+   42  ip a 
+   43  systemctl restart network
+   44  ip a 
+   45  cd /etc/sysconfig/network-scripts/
+   46  ls
+   47  vim ifcfg-ens33 
+   48  vi ifcfg-ens33 
+   49  systemctl restart network
+   50  ip a 
+   51  exit
+   52  du -sh /
+   53  openssl passwd -1
+   54  cobbler --help
+   55  ping 172.20.51.7
+   56  ping 172.20.42.66
+   57  yum -y install tree
+   58  poweroff
+   59  dig www.sina.com.cn
+   60  yum -y install dig
+   61  yum install bind-utils -y
+   62  dig www.sina.com.cn
+   63  mount /dev/sr0 /mnt
+   64  yum install bind-utils -y
+   65  dig www.sina.com.cn
+   66  ping 172.20.119.23
+   67  ping 172.20.42.66
+   68  df
+   69  mkdir /test
+   70  mount /etc/ /test/
+   71  ll
+   72  poweroff
+   73  vim .bashrc 
+   74  . .bashrc  &&exit
+   75  vim /etc/sysconfig/network-scripts/ifcfg-ens33
+   76  mv /etc/sysconfig/network-scripts/ifcfg-ens33 /etc/sysconfig/network-scripts/ifcfg-eth0
+   77  vim /etc/default/grub    
+   78  grub2-mkconfig -o /boot/grub2/grub.cfg && reboot
+   79  cd /etc/yum.repos.d/
+   80  ls
+   81  vim base.repo 
+   82  yum repolist
+   83  vim base.repo 
+   84  yum repolist
+   85  cd 
+   86  ls
+   87  ip a 
+   88  vim /etc/sysconfig/network-scripts/ifcfg-ens33 
+   89  systemctl restart network
+   90  ip a 
+   91  mount /dev/sr0 /mnt/
+   92  yum -y install lrzsz
+   93  cd /etc/yum.repos.d/
+   94  ll
+   95  vim base.repo 
+   96  yum repolist
+   97  yum clean all
+   98  yum repolist
+   99  vim /etc/hostname
+  100  hostname L7.google.net &&exit
+  101  vim /etc/hosts
+  102  mount /dev/sr0 /mnt/
+  103  yum -y install chrony
+  104  vim /etc/chrony.conf
+  105  systemctl start chronyd
+  106  systemctl enable chronyd
+  107  systemctl status chronyd
+  108  date
+  109  clock
+  110  cd /data/
+  111  ls
+  112  rm -rf fstab 
+  113  poweroff
+  114  date
+  115  vim /etc/hosts
+  116  ip a 
+  117  poweroff
+  118  vim /etc/hosts
+  119  poweroff
+  120  vim /etc/sysconfig/network-scripts/ifcfg-eth0 
+  121  systemctl restart network
+  122  ping g.cn
+  123  yum install  vim iotop bc gcc gcc-c++ glibc glibc-devel pcre pcre-devel openssl  openssl-devel zip unzip zlib-devel  net-tools lrzsz tree ntpdate telnet lsof tcpdump wget libevent libevent-devel bc  systemd-devel bash-completion traceroute -y
+  124  cd /etc/yum.repos.d/
+  125  ls
+  126  ping g.cn
+  127  curl http://www.gogs.cn:3000/
+  128  vim /etc/sysconfig/network-scripts/ifcfg-eth0 
+  129  systemctl restart network
+  130  l
+  131  yum -y install wget
+  132  wget http://pkg.jenkins.io/redhat-stable/jenkins-2.138.4-1.1.noarch.rpm
+  133  yum install -y jenkins-2.138.4-1.1.noarch.rpm 
+  134  rz -E
+  135  yum -y install jdk-8u192-linux-x64.rpm
+  136  java -version
+  137  vim /etc/sysconfig/jenkins
+  138  systemctl enable jenkins --now
+  139  systemctl status jenkins
+  140  systemctl start jenkins
+  141  ss -ntl
+  142  systemctl status jenkins
+  143  systemctl enable jenkins
+  144  chkconfig --add jenkins
+  145   chkconfig --level 2345 jenkins on
+  146  chkconfig --list
+  147  cat /var/lib/jenkins/secrets/initialAdminPassword
+  148  ll /var/lib/jenkins/plugins/
+  149  free -m
+  150  reboot
+  151  vim /etc/hostname 
+  152  hostname L7-Jenkins-server
+  153  exit
+  154  free -m
+  155  ping g.cn
+  156  ;
+  157  ping www.tgogst.com
+  158  l
+  159  cd /var/lib/jenkins/workspace/test
+  160  ls
+  161  yum -y install git
+  162  git clone http://www.tgogst.com:3000/Jenkins/test.git
+  163  ls
+  164  cd test/
+  165  ls
+  166  rm -rf *
+  167  ls
+  168  cd ..
+  169  ls
+  170  cd ..
+  171  ls
+  172  pwd
+  173  ll
+  174  find / -name f8.txt
+  175  cd /var/lib/jenkins/workspace/test/f8.txt
+  176  cd /var/lib/jenkins/workspace/test/
+  177  ls
+  178  cat f8.txt 
+  179  ls
+  180  cd ..
+  181  ls
+  182  cd 
+  183  pwd
+  184  cd -
+  185  ls
+  186  pwd
+  187  ls
+  188  cd test
+  189  ls
+  190  l
+  191  ls
+  192  ping blogs.studylinux.net
+  193  cd ..
+  194  ls
+  195  find / -name script
+  196  cd /usr/share/bash-completion/completions/script
+  197  cd /usr/share/bash-completion/completions/
+  198  ls
+  199  cd /var/lib/jenkins/workspace/test/.git/refs/remotes/origin/script
+  200  cd /var/lib/jenkins/workspace/test/.git/refs/remotes/origin/
+  201  ls
+  202  vim script 
+  203  find / -name hostping.sh
+  204  ls
+  205  history 
+  206  cd /var/lib/jenkins/workspace/test/
+  207  ls
+  208  git branch -a
+  209  git checkout script
+  210  ls
+  211  cat README.md 
+  212  ls
+  213  cd ..
+  214  ls
+  215  cd -
+  216  ls
+  217  git checkout script
+  218  ls
+  219  cat README.md 
+  220  LS
+  221  ls
+  222  cd ..
+  223  ls
+  224  cd test
+  225  ls
+  226  cat README.md 
+  227  git pull
+  228  ls
+  229  ll
+  230  cao hostping.sh 
+  231  cat sumid.sh 
+  232  ls
+  233  cat README.md 
+  234  ls
+  235  git branch script
+  236  git check script
+  237  git checkout srcipt
+  238  ls
+  239  git branch --all
+  240  git checkout /origin/script
+  241  ls
+  242  cd ..
+  243  cd test
+  244  ls
+  245  git branch --all
+  246  git checkout script
+  247  ls
+  248  cat README.md 
+  249  git pull --all
+  250  cat README.md 
+  251  git checkout script
+  252  ls
+  253  cat README.md 
+  254  git checkout script
+  255  ls
+  256  ll
+  257  cat README.md 
+  258  git checkout master
+  259  ls
+  260  cat README.md 
+  261  git checkout script
+  262  ls
+  263  cat README.md 
+  264  git checkout script
+  265  ls
+  266  ll
+  267  ls
+  268  git branch 
+  269  git checkout script
+  270  ls
+  271  date
+  272  clock
+  273  reboot
+  274  history 
+  275  cd /var/lib/jenkins/workspace/test
+  276  ls
+  277  git checkout script 
+  278  ls
+  279  ks
+  280  ls
+  281  ll
+  282  ls
+  283  cd ..
+  284  ls
+  285  cd test@tmp/
+  286  ;s
+  287  ls
+  288  cd ..
+  289  ls
+  290  cd test
+  291  ls
+  292  git pull --all
+  293  ls
+  294  cd 
+  295  ls
+  296  cd -
+  297  ls
+  298  git add .
+  299  git commit -m "change"
+  300  git config --global user.email rosecar256@gmail.com
+  301  git config --global user.name Jenkins
+  302  git commit -m "change"
+  303  git add .
+  304  git commit -m "change"
+  305  git push
+  306  git config --global 
+  307  ls
+  308  git add .
+  309  git commit -m "change"
+  310  rm -rf README.md 
+  311  git add .
+  312  'git add --all
+  313  git add --all
+  314  git commit -m "change"
+  315  git push
+  316  ls
+  317  git clone http://www.tgogst.com:3000/Jenkins/test.git
+  318  ls
+  319  git checkout script
+  320  ls
+  321  cat README.md 
+  322  ls
+  323  cat README.md 
+  324  vim README.md 
+  325  ls
+  326  cd ..
+  327  ls
+  328  cd test
+  329  ls
+  330  git branch 
+  331  git branch --all
+  332  ss -ntl
+  333  ip a 
+  334  whoami
+  335  history 
+  336  cd /var/lib/jenkins/
+  337  ls
+  338  cd workspace/
+  339  ls
+  340  cd test
+  341  ls
+  342  history 
+  343  cd /var/lib/jenkins/workspace/test/
+  344  ls
+  345  ll
+  346  cat README.md 
+  347  dig www.curry.tk
+  348  history 
+  349  history > Jenkins-history

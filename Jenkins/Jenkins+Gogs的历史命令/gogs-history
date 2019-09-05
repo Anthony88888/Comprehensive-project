@@ -1,0 +1,228 @@
+    1  cd /etc/sysconfig/network-scripts/
+    2  ls
+    3  vim ifcfg-ens33 
+    4  vi ifcfg-ens33 
+    5  ip a 
+    6  vi ifcfg-ens33 
+    7  systemctl restart network
+    8  systemctl network restart
+    9  systemctl start network
+   10  ip a 
+   11  reboot
+   12  ping www.baidu.com
+   13  cd /etc/yum.repos.d/
+   14  ls
+   15  mkdir Backup
+   16  mv C* Backup/
+   17  ls
+   18  ping 172.20.42.66
+   19  ls
+   20  vim base.repo 
+   21  vi base.repo 
+   22  yum repolist
+   23  mount /dev/sr0 /mnt
+   24  echo "- - -" > /sys/class/scsi_host/host0/scan
+   25  lsblk
+   26  mount /dev/sr0 /mnt
+   27  df
+   28  yum repolist
+   29  yum -y install  vim
+   30  du -sh /
+   31  cd /etc/ssh/sshd_config 
+   32  vim /etc/ssh/sshd_config 
+   33  systemctl restart ssdh
+   34  systemctl restart sshd
+   35  exit
+   36  vim /etc/profile.d/
+   37  vim .bashrc 
+   38  . .bashrc 
+   39  vim .bashrc 
+   40  . .bashrc 
+   41  ip[ a 
+   42  ip a 
+   43  systemctl restart network
+   44  ip a 
+   45  cd /etc/sysconfig/network-scripts/
+   46  ls
+   47  vim ifcfg-ens33 
+   48  vi ifcfg-ens33 
+   49  systemctl restart network
+   50  ip a 
+   51  exit
+   52  du -sh /
+   53  openssl passwd -1
+   54  cobbler --help
+   55  ping 172.20.51.7
+   56  ping 172.20.42.66
+   57  yum -y install tree
+   58  poweroff
+   59  dig www.sina.com.cn
+   60  yum -y install dig
+   61  yum install bind-utils -y
+   62  dig www.sina.com.cn
+   63  mount /dev/sr0 /mnt
+   64  yum install bind-utils -y
+   65  dig www.sina.com.cn
+   66  ping 172.20.119.23
+   67  ping 172.20.42.66
+   68  df
+   69  mkdir /test
+   70  mount /etc/ /test/
+   71  ll
+   72  poweroff
+   73  mount /dev/sr0 /mnt/
+   74  yum -y install lrzsz
+   75  cd /etc/yum.repos.d/
+   76  ll
+   77  vim base.repo 
+   78  yum repolist
+   79  yum clean all
+   80  yum repolist
+   81  ip a 
+   82  vim /etc/sysconfig/network-scripts/ifcfg-ens33 
+   83  systemctl restart network
+   84  cd /etc/yum.repos.d/
+   85  ls
+   86  vim base.repo 
+   87  yum repolist
+   88  vim base.repo 
+   89  yum repolist
+   90  cd 
+   91  ls
+   92  vim .bashrc
+   93  . .bashrc  &&exit
+   94  vim /etc/sysconfig/network-scripts/ifcfg-ens33 
+   95  mv /etc/sysconfig/network-scripts/ifcfg-ens33 /etc/sysconfig/network-scripts/ifcfg-eth0
+   96  vim /etc/default/grub   
+   97  grub2-mkconfig -o /boot/grub2/grub.cfg && reboot
+   98  ip a 
+   99  ip a
+  100  vim /etc/hostname
+  101  hostname L6.google.net &&exit 
+  102  vim /etc/hosts
+  103  mount /dev/sr0 /mnt/
+  104  yum -y install chrony
+  105  vim /etc/chrony.conf
+  106  systemctl start chronyd
+  107  systemctl enable chronyd
+  108  systemctl status chronyd
+  109   date
+  110  clock
+  111  date
+  112  vim /etc/hosts
+  113  ip a 
+  114  poweroff
+  115  vim /etc/hosts
+  116  poweroff
+  117  vim /etc/sysconfig/network-scripts/ifcfg-eth0 
+  118  systemctl restart network
+  119  ping g.cn
+  120  vim /etc/sysconfig/network-scripts/ifcfg-eth0 
+  121  systemctl restart network
+  122  ping g.cn
+  123  cat /etc/resolv.conf 
+  124  ping testdns.com
+  125  ping www.testdns.com
+  126  wget https://dl.gogs.io/0.11.43/gogs_0.11.43_linux_amd64.tar.gz 
+  127  yum -y install wget
+  128  wget https://dl.gogs.io/0.11.43/gogs_0.11.43_linux_amd64.tar.gz
+  129  tar -zxvf gogs_0.11.43_linux_amd64.tar.gz   
+  130  cp -rf gogs /usr/local/gogs
+  131  cd /usr/local/gogs/
+  132  ls
+  133  groupadd gogs
+  134   useradd -g gogs -s /bin/bash gogs
+  135  passwd gogs 
+  136  mkdir -p /data/gogs/repositories
+  137  mkdir -p /data/gogs/logs
+  138  chown -R gogs:gogs /data/gogs/
+  139  chown -R gogs:gogs /usr/local/gogs/
+  140  vim /usr/lib/systemd/system/gogs.service
+  141  systemctl start gogs
+  142  ss -ntl
+  143  systemctl status gogs
+  144  systemctl enable gogs
+  145  yum -y install go git
+  146  yum install -y epel*
+  147  yum -y install go git
+  148  wget -i -c http://dev.mysql.com/get/mysql57-community-release-el7-10.noarch.rpm
+  149  yum -y install mysql57-community-release-el7-10.noarch.rpm
+  150  yum -y install mysql-community-server
+  151  systemctl enable mysqld --now
+  152  systemctl status mysqld
+  153  grep "password" /var/log/mysqld.log
+  154  mysql_secure_installation
+  155   mysql -uroot -p
+  156  ss -ntl
+  157  free -m
+  158  cd /etc/yum.repos.d/
+  159  ls
+  160  vim base.repo 
+  161  yum clean all
+  162  yum repolist
+  163  yum list pdns*
+  164  ls
+  165  mv Backup/* .
+  166  ls
+  167  mv base.repo Backup/
+  168  ls
+  169  yum clean all
+  170  yum makecache
+  171  free -m
+  172  ss -ntl
+  173  vim /etc/hostname 
+  174  hostname L6-gogs-server
+  175  exit
+  176  git branch --all
+  177  git init
+  178  cd .git/
+  179  ls
+  180  vim config 
+  181  LS
+  182  ls
+  183  cd 
+  184  git clone http://www.tgogst.com:3000/Jenkins/test.git
+  185  touch README.md
+  186  git init
+  187  git add README.md
+  188  git commit -m "first commit"
+  189  git config user.name Jenkins
+  190  git config user.email rosecar256@gmail.com
+  191  git commit -m "first commit"
+  192  ls
+  193  git remote add origin http://www.tgogst.com:3000/Jenkins/test.git
+  194  git push -u origin master
+  195  ss -ntl
+  196  systemctl enable gogs --now
+  197  ss -ntl
+  198  systemctl status gogs
+  199  ss -ntl
+  200  history 
+  201  systemctl start gogs
+  202  ss -ntl
+  203  ss -ntl
+  204  man can
+  205  help cat
+  206  cat --help
+  207  free -m
+  208  free -m
+  209  ss -ntl
+  210  ping g.cn
+  211  systemctl restart gogs
+  212  history 
+  213  ls
+  214  ss -ntl
+  215  history 
+  216  systemctl start gogs 
+  217  systemctl enable gogs
+  218  whoami
+  219  free -m
+  220  ls
+  221  dig ck9-6zkv.wudic3cxcadministrator.com
+  222  ping wudic3cxcadministrator.com
+  223  ping 
+  224  ping ck9-6zkv.wudic3cxcadministrator.com
+  225  dig ck9-6zkv.wudic3cxcadministrator.com
+  226  ping www.tomcat.com
+  227  history 
+  228  history >> gogshistory
